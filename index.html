@@ -250,6 +250,60 @@
         if (e.key === 'Enter') calculate();
       });
     });
-  </script>
+  </script>function getZodiacSign() {
+  const day = parseInt(document.getElementById('birth-day').value);
+  const month = parseInt(document.getElementById('birth-month').value);
+
+  if (!day || !month) {
+    alert("يرجى اختيار اليوم والشهر بشكل صحيح!");
+    return;
+  }
+
+  let sign = "";
+  let description = "";
+
+  if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) {
+    sign = "برج الدلو ♒";
+    description = "شخصية مستقلة، مبتكرة، وتمتلك عاطفة صادقة وهادئة.";
+  } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+    sign = "برج الحوت ♓";
+    description = "شخصية رومانسية جداً، حساسة، وتعطي أولوية كبيرة للمشاعر.";
+  } else if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) {
+    sign = "برج الحمل ♈";
+    description = "شخصية شغوفة، قيادية، وتتمتع بحضور قوي وعاطفة ملتهبة.";
+  } else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) {
+    sign = "برج الثور ♉";
+    description = "شخصية مخلصة، هادئة، وتبحث عن الاستقرار والوفاء في العلاقات.";
+  } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+    sign = "برج الجوزاء ♊";
+    description = "شخصية اجتماعية، مرحة، وتحب التواصل الدائم والتجديد.";
+  } else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) {
+    sign = "برج السرطان ♋";
+    description = "شخصية دافئة، حنونة جداً، وتهتم بحماية وتدليل الشريك.";
+  } else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
+    sign = "برج الأسد ♌";
+    description = "شخصية كريمة، واثقة من نفسها، وتعبر عن حبها بفخامة ووضوح.";
+  } else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
+    sign = "برج العذراء ♍";
+    description = "شخصية مخلصة، تهتم بالتفاصيل الدقيقة، وتدعم الشريك بقوة.";
+  } else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
+    sign = "برج الميزان ♎";
+    description = "شخصية دبلوماسية، ساحرة، وتحب العدل والرومانسية الهادئة.";
+  } else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) {
+    sign = "برج العقرب ♏";
+    description = "شخصية عميقة المشاعر، حريصة، ولديها إخلاص كبير للحبيب.";
+  } else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) {
+    sign = "برج القوس ♐";
+    description = "شخصية محبة للمغامرة، صادقة، وتنشر الطاقة الإيجابية حولها.";
+  } else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) {
+    sign = "برج الجدي ♑";
+    description = "شخصية عملية، جادة، وتبحث عن العلاقات المتينة والطويلة الأمد.";
+  }
+
+  document.getElementById('zodiac-title').innerText = sign;
+  document.getElementById('zodiac-desc').innerText = description;
+  document.getElementById('zodiac-result').style.display = 'block';
+}
+
 </body>
 </html>
